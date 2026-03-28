@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Privacy: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', background: '#f8fafc' }}>
       <div className="container">
@@ -46,7 +47,7 @@ const Privacy: React.FC = () => {
             Implementăm măsuri de securitate adecvate pentru a proteja informațiile personale împotriva accesului neautorizat.
           </p>
           <button 
-            onClick={() => window.history.back()}
+            onClick={() => navigate(-1)}
             className="btn btn-primary"
             style={{ marginTop: '30px', cursor: 'pointer' }}
           >

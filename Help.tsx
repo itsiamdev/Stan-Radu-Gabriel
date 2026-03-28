@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Help: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', background: '#f8fafc' }}>
       <div className="container">
@@ -41,7 +43,7 @@ const Help: React.FC = () => {
 
 
           <button 
-            onClick={() => window.history.back()}
+            onClick={() => navigate(-1)}
             className="btn btn-primary"
             style={{ marginTop: '20px', cursor: 'pointer' }}
           >

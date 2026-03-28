@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const [currentYear, setCurrentYear] = useState('');
+  const location = useLocation();
+  const isHomePage = location.pathname === '/' || location.pathname === '/Stan-Radu-Gabriel/';
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear().toString());
@@ -29,18 +32,30 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h4>Link-uri Rapide</h4>
             <ul>
-              <li><a onClick={() => scrollToSection('home')}>Acasă</a></li>
-              <li><a onClick={() => scrollToSection('about')}>Despre Mine</a></li>
-              <li><a onClick={() => scrollToSection('projects')}>Proiecte</a></li>
-              <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+              <li><Link to="/">Acasă</Link></li>
+              {isHomePage ? (
+                <li><a onClick={() => scrollToSection('about')}>Despre Mine</a></li>
+              ) : (
+                <li><Link to="/">Despre Mine</Link></li>
+              )}
+              {isHomePage ? (
+                <li><a onClick={() => scrollToSection('projects')}>Proiecte</a></li>
+              ) : (
+                <li><Link to="/#projects">Proiecte</Link></li>
+              )}
+              {isHomePage ? (
+                <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+              ) : (
+                <li><Link to="/">Contact</Link></li>
+              )}
             </ul>
           </div>
           <div className="footer-section">
             <h4>Despre</h4>
             <ul>
-              <li><a href="/dezvoltator">Dezvoltator</a></li>
-              <li><a href="/politica-confidentialitate">Politică de Confidențialitate</a></li>
-              <li><a href="/ajutor">Ajutor</a></li>
+              <li><Link to="/dezvoltator">Dezvoltator</Link></li>
+              <li><Link to="/politica-confidentialitate">Politică de Confidențialitate</Link></li>
+              <li><Link to="/ajutor">Ajutor</Link></li>
             </ul>
           </div>
           <div className="footer-section">

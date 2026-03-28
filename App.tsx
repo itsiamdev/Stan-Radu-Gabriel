@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import About from './About';
@@ -12,7 +12,15 @@ import Location from './Location';
 import Privacy from './Privacy';
 import Help from './Help';
 
-const App: React.FC = () => {
+// Component that handles scroll and global styles on route change
+const RouteChangeHandler: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   useEffect(() => {
     // Add scroll effect to navbar
     const handleScroll = () => {
@@ -33,22 +41,25 @@ const App: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
 
     // Add smooth scrolling to anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
-      anchor.addEventListener('click', (e: Event) => {
-        e.preventDefault();
-        const targetId = (anchor as HTMLAnchorElement).getAttribute('href')?.substring(1);
-        if (targetId) {
-          const element = document.getElementById(targetId);
-          if (element) {
-            const offsetTop = element.offsetTop - 80;
-            window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-            });
+    const setupAnchorLinks = () => {
+      document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
+        anchor.addEventListener('click', (e: Event) => {
+          e.preventDefault();
+          const targetId = (anchor as HTMLAnchorElement).getAttribute('href')?.substring(1);
+          if (targetId) {
+            const element = document.getElementById(targetId);
+            if (element) {
+              const offsetTop = element.offsetTop - 80;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+              });
+            }
           }
-        }
+        });
       });
-    });
+    };
+    setupAnchorLinks();
 
     // Add animation on scroll
     const observerOptions: IntersectionObserverInit = {
@@ -64,12 +75,16 @@ const App: React.FC = () => {
       });
     }, observerOptions);
 
-    document.querySelectorAll('.project-card, .contact-card, .about-content').forEach(el => {
-      observer.observe(el);
-    });
+    // Wait for DOM to update then observe elements
+    setTimeout(() => {
+      document.querySelectorAll('.project-card, .contact-card, .about-content').forEach(el => {
+        observer.observe(el);
+      });
+    }, 100);
 
     // Add CSS for animations
     const style = document.createElement('style');
+    style.id = 'animations-style';
     style.textContent = `
       .project-card, .contact-card, .about-content {
         opacity: 0;
@@ -105,10 +120,15 @@ const App: React.FC = () => {
         }
       }
     `;
+    
+    // Remove old style if exists, then add new one
+    const oldStyle = document.getElementById('animations-style');
+    if (oldStyle) oldStyle.remove();
     document.head.appendChild(style);
 
     // Add responsive navbar menu styles
     const responsiveStyle = document.createElement('style');
+    responsiveStyle.id = 'responsive-style';
     responsiveStyle.textContent = `
       @media (max-width: 768px) {
         .navbar-menu {
@@ -120,28 +140,37 @@ const App: React.FC = () => {
         }
       }
     `;
+    
+    const oldResponsiveStyle = document.getElementById('responsive-style');
+    if (oldResponsiveStyle) oldResponsiveStyle.remove();
     document.head.appendChild(responsiveStyle);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
-  const Home = () => (
-    <>
-      <Navbar />
-      <Hero />
-      <About />
-      <AllProjects />
-      <Contact />
-      <Footer />
-    </>
-  );
+  return null;
+};
 
+const Home = () => (
+  <>
+    <Navbar />
+    <Hero />
+    <About />
+    <AllProjects />
+    <Contact />
+    <Footer />
+  </>
+);
+
+const App: React.FC = () => {
   const basename = import.meta.env.PROD ? '/Stan-Radu-Gabriel/' : '/';
 
   return (
     <BrowserRouter basename={basename}>
+      <RouteChangeHandler />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<><Navbar /><Projects /><Footer /></>} />

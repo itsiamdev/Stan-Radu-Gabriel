@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Developer: React.FC = () => {
+  const navigate = useNavigate();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -144,7 +146,7 @@ const Developer: React.FC = () => {
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
             <button 
-              onClick={() => window.history.back()}
+              onClick={() => navigate('/')}
               className="btn btn-primary"
               style={{ cursor: 'pointer' }}
             >

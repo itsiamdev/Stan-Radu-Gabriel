@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('darkMode') === 'true');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
     if (isDarkMode) {
@@ -13,7 +17,18 @@ const Navbar: React.FC = () => {
     localStorage.setItem('darkMode', isDarkMode.toString());
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
+  const isHomePage = location.pathname === '/' || location.pathname === '/Stan-Radu-Gabriel/';
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -32,16 +47,29 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`navbar ${window.scrollY > 50 ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <div className="navbar-brand" onClick={() => scrollToSection('home')}>
+        <Link to="/" className="navbar-brand">
           Stan Radu Gabriel
-        </div>
+        </Link>
         <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a onClick={() => scrollToSection('home')}>Acasă</a>
-          <a onClick={() => scrollToSection('about')}>Despre Mine</a>
-          <a onClick={() => scrollToSection('projects')}>Proiecte</a>
-          <a onClick={() => scrollToSection('contact')}>Contact</a>
+          <Link to="/">Acasă</Link>
+          {isHomePage ? (
+            <a onClick={() => scrollToSection('about')}>Despre Mine</a>
+          ) : (
+            <Link to="/">Despre Mine</Link>
+          )}
+          {isHomePage ? (
+            <a onClick={() => scrollToSection('projects')}>Proiecte</a>
+          ) : (
+            <Link to="/#projects">Proiecte</Link>
+          )}
+          {isHomePage ? (
+            <a onClick={() => scrollToSection('contact')}>Contact</a>
+          ) : (
+            <Link to="/">Contact</Link>
+          )}
+          <Link to="/projects">Toate Proiectele</Link>
         </div>
         <button className="theme-toggle" onClick={toggleDarkMode}>
           {isDarkMode ? '☀️' : '🌙'}
