@@ -128,7 +128,7 @@ const Developer: React.FC = () => {
               className="btn btn-primary"
               style={{ cursor: 'pointer' }}
             >
-              Înapoi la Homepage
+              Înapoi Acasă
             </button>
           </div>
         </div>

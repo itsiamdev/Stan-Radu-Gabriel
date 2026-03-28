@@ -8,6 +8,9 @@ import AllProjects from './AllProjects';
 import Contact from './Contact';
 import Footer from './Footer';
 import Developer from './Developer';
+import Location from './Location';
+import Privacy from './Privacy';
+import Help from './Help';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -143,6 +146,9 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<><Navbar /><Projects /><Footer /></>} />
         <Route path="/developer" element={<><Navbar /><Developer /><Footer /></>} />
+        <Route path="/unde-sunt" element={<><Navbar /><Location /><Footer /></>} />
+        <Route path="/politica-confidentialitate" element={<><Navbar /><Privacy /><Footer /></>} />
+        <Route path="/ajutor" element={<><Navbar /><Help /><Footer /></>} />
       </Routes>
     </BrowserRouter>
   );

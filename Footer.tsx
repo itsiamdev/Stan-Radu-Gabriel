@@ -33,7 +33,15 @@ const Footer: React.FC = () => {
               <li><a onClick={() => scrollToSection('about')}>Despre Mine</a></li>
               <li><a onClick={() => scrollToSection('projects')}>Proiecte</a></li>
               <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h4>Informații</h4>
+            <ul>
               <li><a href="/dezvoltator">Despre Dezvoltator</a></li>
+              <li><a href="/unde-sunt">Unde Mă Găsești</a></li>
+              <li><a href="/politica-confidentialitate">Politică de Confidențialitate</a></li>
+              <li><a href="/ajutor">Ajutor</a></li>
             </ul>
           </div>
           <div className="footer-section">
