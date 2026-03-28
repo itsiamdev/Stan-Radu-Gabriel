@@ -33,6 +33,7 @@ const Footer: React.FC = () => {
               <li><a onClick={() => scrollToSection('about')}>Despre Mine</a></li>
               <li><a onClick={() => scrollToSection('projects')}>Proiecte</a></li>
               <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+              <li><a href="/dezvoltator">Despre Dezvoltator</a></li>
             </ul>
           </div>
           <div className="footer-section">
@@ -46,8 +47,6 @@ const Footer: React.FC = () => {
         </div>
         <div className="footer-bottom">
           <p>&copy; {currentYear} Stan Radu Gabriel. Toate drepturile rezervate.</p>
-          <br />
-          <p>Acest site a fost realizat de Ioniță Aurel-Mihai.</p>
         </div>
       </div>
     </footer>
