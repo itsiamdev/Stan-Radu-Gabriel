@@ -29,6 +29,18 @@ const Developer: React.FC = () => {
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
         }}>
           <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+            <img 
+              src="assets/Dezvoltator/dezvoltator.png.jpeg" 
+              alt="Ioniță Aurel-Mihai" 
+              style={{ 
+                width: '150px', 
+                height: '150px', 
+                borderRadius: '50%', 
+                objectFit: 'cover',
+                marginBottom: '20px',
+                boxShadow: '0 5px 20px rgba(0, 0, 0, 0.15)'
+              }} 
+            />
             <h3 style={{ fontSize: '2rem', color: '#2563eb', marginBottom: '10px' }}>
               Ioniță Aurel-Mihai
             </h3>
