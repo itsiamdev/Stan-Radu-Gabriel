@@ -14,6 +14,13 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="hero">
+      <div className="hero-circles">
+        <div className="circle circle-1"></div>
+        <div className="circle circle-2"></div>
+        <div className="circle circle-3"></div>
+        <div className="circle circle-4"></div>
+        <div className="circle circle-5"></div>
+      </div>
       <div className="hero-content">
         <h1>Salut! Sunt <span className="highlight">Stan Radu Gabriel</span></h1>
         <p>Elev în clasa a 10-a și membru în Consiliul Elevilor</p>

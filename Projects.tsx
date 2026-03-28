@@ -1,28 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Projects: React.FC = () => {
   const imagesRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const scrollLeft = (index: number) => {
-    if (imagesRefs.current[index]) {
-      imagesRefs.current[index]!.scrollLeft -= 150;
-    }
-  };
-
-  const scrollRight = (index: number) => {
-    if (imagesRefs.current[index]) {
-      imagesRefs.current[index]!.scrollLeft += 150;
-    }
-  };
-
-  useEffect(() => {
-    setCurrentImageIndex(0);
-  }, [selectedProject]);
-
-  const navigate = useNavigate();
 
   const parseDate = (dateStr: string): Date => {
     const months: { [key: string]: number } = {
@@ -127,7 +108,7 @@ const Projects: React.FC = () => {
         </div>
         <h3 className="recent-projects-title">Recente</h3>
         <div className="projects-grid">
-          {projects.slice(0, 3).map((project, index) => (
+          {projects.map((project, index) => (
             <div
               key={project.title}
               className="project-card"
@@ -154,14 +135,6 @@ const Projects: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-        <div className="load-more-container">
-          <button
-            className="btn btn-primary"
-            onClick={() => navigate("/projects")}
-          >
-            Mai multe proiecte
-          </button>
         </div>
       </div>
       {selectedProject !== null && (

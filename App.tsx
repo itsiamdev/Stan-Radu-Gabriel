@@ -4,7 +4,6 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 import About from './About';
 import Projects from './Projects';
-import AllProjects from './AllProjects';
 import Contact from './Contact';
 import Footer from './Footer';
 import Developer from './Developer';
@@ -159,7 +158,7 @@ const Home = () => (
     <Navbar />
     <Hero />
     <About />
-    <AllProjects />
+    <Projects />
     <Contact />
     <Footer />
   </>

@@ -69,7 +69,6 @@ const Navbar: React.FC = () => {
           ) : (
             <Link to="/">Contact</Link>
           )}
-          <Link to="/projects">Toate Proiectele</Link>
         </div>
         <button className="theme-toggle" onClick={toggleDarkMode}>
           {isDarkMode ? '☀️' : '🌙'}
