@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Privacy: React.FC = () => {
   return (
@@ -44,21 +45,12 @@ const Privacy: React.FC = () => {
           <p style={{ color: '#4a4a4a', lineHeight: '1.7', marginBottom: '20px' }}>
             Implementăm măsuri de securitate adecvate pentru a proteja informațiile personale împotriva accesului neautorizat.
           </p>
-
-          <h4 style={{ fontSize: '1.3rem', marginBottom: '15px', color: '#1a1a1a' }}>
-            Contact
-          </h4>
-          <p style={{ color: '#4a4a4a', lineHeight: '1.7' }}>
-            Pentru întrebări despre politica de confidențialitate, ne puteți contacta la: 
-            <a href="mailto:aurel.ionita@gmail.com" style={{ color: '#2563eb' }}> aurel.ionita@gmail.com</a>
-          </p>
-
           <button 
             onClick={() => window.history.back()}
             className="btn btn-primary"
             style={{ marginTop: '30px', cursor: 'pointer' }}
           >
-            Înapoi
+            Înapoi Acasă
           </button>
         </div>
       </div>

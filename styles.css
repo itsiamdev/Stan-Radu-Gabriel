@@ -653,6 +653,20 @@ body {
     line-height: 1.6;
 }
 
+.footer-section p a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section p a:hover {
+    color: #22c55e !important;
+}
+
+.developer-page a:hover {
+    color: #08118f !important;
+}
+
 .footer-section ul {
     list-style: none;
 }

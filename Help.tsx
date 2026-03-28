@@ -18,7 +18,7 @@ const Help: React.FC = () => {
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
         }}>
           <h4 style={{ fontSize: '1.3rem', marginBottom: '15px', color: '#1a1a1a' }}>
-            Cum Putem Ajuta
+            Cum Putem Ajuta?
           </h4>
           <p style={{ color: '#4a4a4a', lineHeight: '1.7', marginBottom: '20px' }}>
             Dacă ai întrebări sau ai nevoie de asistență, suntem aici să te ajutăm!
@@ -30,7 +30,7 @@ const Help: React.FC = () => {
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontWeight: '600', marginBottom: '10px' }}>Cum pot lua contact cu proprietarul site-ului?</p>
             <p style={{ color: '#4a4a4a', marginBottom: '15px' }}>
-              Poți folosi formularea de contact din secțiunea Contact sau ne poți trimite un email.
+              Poți folosi informatiile de contact din secțiunea Contact sau ne poți trimite un email.
             </p>
             
             <p style={{ fontWeight: '600', marginBottom: '10px' }}>Site-ul nu se încarcă corect?</p>
@@ -39,17 +39,6 @@ const Help: React.FC = () => {
             </p>
           </div>
 
-          <h4 style={{ fontSize: '1.3rem', marginBottom: '15px', color: '#1a1a1a' }}>
-            Contactează-ne
-          </h4>
-          <p style={{ color: '#4a4a4a', lineHeight: '1.7', marginBottom: '20px' }}>
-            Pentru alte întrebări sau probleme, ne poți contacta la:
-          </p>
-          <p style={{ marginBottom: '20px' }}>
-            <a href="mailto:aurel.ionita@gmail.com" style={{ color: '#2563eb' }}>
-              aurel.ionita@gmail.com
-            </a>
-          </p>
 
           <button 
             onClick={() => window.history.back()}

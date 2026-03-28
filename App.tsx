@@ -145,7 +145,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<><Navbar /><Projects /><Footer /></>} />
-        <Route path="/developer" element={<><Navbar /><Developer /><Footer /></>} />
+        <Route path="/dezvoltator" element={<><Navbar /><Developer /><Footer /></>} />
         <Route path="/unde-sunt" element={<><Navbar /><Location /><Footer /></>} />
         <Route path="/politica-confidentialitate" element={<><Navbar /><Privacy /><Footer /></>} />
         <Route path="/ajutor" element={<><Navbar /><Help /><Footer /></>} />

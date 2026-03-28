@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Stan Radu Gabriel</h3>
-            <p>Membru în Consiliul Elevilor<br />Colegiul Național "Ștefan cel Mare"</p>
+            <p>Membru în Consiliul Elevilor<br /><a href="https://cnsm.ro" target="_blank" style={{ color: 'inherit', textDecoration: 'none' }}>Colegiul Național "Ștefan cel Mare"</a> din Targu Neamț</p>
           </div>
           <div className="footer-section">
             <h4>Link-uri Rapide</h4>
@@ -36,10 +36,9 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div className="footer-section">
-            <h4>Informații</h4>
+            <h4>Despre</h4>
             <ul>
-              <li><a href="/dezvoltator">Despre Dezvoltator</a></li>
-              <li><a href="/unde-sunt">Unde Mă Găsești</a></li>
+              <li><a href="/dezvoltator">Dezvoltator</a></li>
               <li><a href="/politica-confidentialitate">Politică de Confidențialitate</a></li>
               <li><a href="/ajutor">Ajutor</a></li>
             </ul>
