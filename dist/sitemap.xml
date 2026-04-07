@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://iam269.github.io/Stan-Radu-Gabriel/</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://iam269.github.io/Stan-Radu-Gabriel/projects</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://itsiamdev.github.io/Stan-Radu-Gabriel/</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://ionitaaurelmihai.vercel.app</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>
