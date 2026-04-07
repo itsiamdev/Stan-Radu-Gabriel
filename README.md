@@ -16,7 +16,7 @@ This responsive personal website serves as a comprehensive digital portfolio fea
 
 ## 🌐 Live Demo
 
-Experience the website in action: [https://iam269.github.io/Stan-Radu-Gabriel/](https://iam269.github.io/Stan-Radu-Gabriel/)
+Experience the website in action: [https://itsiamdev.github.io/Stan-Radu-Gabriel/](https://itsiamdev.github.io/Stan-Radu-Gabriel/)
 
 ## 🛠️ Technology Stack
 

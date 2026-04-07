@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h4>Despre</h4>
             <ul>
-              <li><Link to="/dezvoltator">Dezvoltator</Link></li>
+              <li><a href="https://ionitaaurelmihai.vercel.app" target="_blank">Dezvoltator</a></li>
               <li><Link to="/politica-confidentialitate">Politică de Confidențialitate</Link></li>
               <li><Link to="/ajutor">Ajutor</Link></li>
             </ul>

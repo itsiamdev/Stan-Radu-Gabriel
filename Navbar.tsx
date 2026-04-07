@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,6 +70,7 @@ const Navbar: React.FC = () => {
           ) : (
             <Link to="/">Contact</Link>
           )}
+          <a href="https://ionitaaurelmihai.vercel.app" target="_blank">Dezvoltator</a>
         </div>
         <button className="theme-toggle" onClick={toggleDarkMode}>
           {isDarkMode ? '☀️' : '🌙'}
